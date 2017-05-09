@@ -18,7 +18,8 @@ return [
         ]
     ],
     '__dependencies' => [
-        'core'
+        'core',
+        '/user/db-mysql'
     ],
     '_services' => [],
     '_autoload' => [

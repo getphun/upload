@@ -33,7 +33,7 @@ return [
                 'type' => 'image',
                 'label' => 'Avatar',
                 'rules' => [
-                    'media' => 'image/*'
+                    'file' => 'image/*'
                 ]
             ]
         ]

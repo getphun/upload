@@ -11,10 +11,19 @@ namespace Upload\Validator;
 class File
 {
     static function test($value){
-        // We don't validate for external source
-        if(strtolower(substr($value,0,4)) === 'http')
+        if(!$value)
             return true;
         
-        return is_file(BASEPATH . $value);
+        $value = (array)$value;
+        
+        foreach($value as $val){
+            // We don't validate for external source
+            if(strtolower(substr($val,0,4)) === 'http')
+                continue;
+            if(!is_file(BASEPATH . $val))
+                return false;
+        }
+        
+        return true;
     }
 }

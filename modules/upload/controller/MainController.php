@@ -41,6 +41,11 @@ class MainController extends \Controller
         
         $c_field = $c_form[$f_form_field];
         $c_rules = $c_field['rules'];
+        
+        // tinyMCE will accept image and video by default
+        if($c_field['type'] == 'wysiwyg')
+            $c_rules['file'] = 'image/*,video/*';
+        
         if(!isset($c_rules['file']))
             return $this->ajax(['error'=>'Form field is not accept file upload']);
         

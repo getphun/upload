@@ -32,8 +32,14 @@ return [
     ],
     
     '_routes' => [
+        'admin' => [
+            'adminFileUpload' => [
+                'rule' => '/comp/upload',
+                'handler' => 'Upload\\Controller\\Main::upload'
+            ]
+        ],
         'site' => [
-            'fileUpload' => [
+            'siteFileUpload' => [
                 'rule' => '/comp/upload',
                 'handler' => 'Upload\\Controller\\Main::upload'
             ]

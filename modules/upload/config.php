@@ -11,11 +11,8 @@ return [
     '__version' => '0.0.1',
     '__git' => 'https://github.com/getphun/upload',
     '__files' => [
-        'modules/upload' => [
-            'install',
-            'remove',
-            'update'
-        ]
+        'modules/upload' => [ 'install', 'remove', 'update' ],
+        'media'          => [ 'install' ]
     ],
     '__dependencies' => [
         'core',

@@ -44,12 +44,14 @@ return [
     ],
     
     'form_validation' => [
-        'file' => [
-            'message' => 'Field :field is pointing to not exists file, or is not acceptable',
-            'options' => [],
-            'handler' => [
-                'class' => 'Upload\\Validator\\File',
-                'action'=> 'test'
+        'validator' => [
+            'file' => [
+                'message' => 'Field :field is pointing to not exists file, or is not acceptable',
+                'options' => [],
+                'handler' => [
+                    'class' => 'Upload\\Validator\\File',
+                    'action'=> 'test'
+                ]
             ]
         ]
     ]

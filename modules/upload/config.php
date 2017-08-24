@@ -28,15 +28,6 @@ return [
         'files' => []
     ],
     
-    '_routes' => [
-        'site' => [
-            'siteFileUpload' => [
-                'rule' => '/comp/upload',
-                'handler' => 'Upload\\Controller\\Main::upload'
-            ]
-        ]
-    ],
-    
     'form_validation' => [
         'validator' => [
             'file' => [

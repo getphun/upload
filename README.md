@@ -1,7 +1,7 @@
 # upload
 
 Adalah modul yang melayani file upload. Modul ini secara otomatis membuka satu route
-ke `SITE:/comp/upload` yang hanya meneria request `POST` untuk memproses file upload.
+ke `HOST:/comp/upload` yang hanya meneria request `POST` untuk memproses file upload.
 Oleh karena itu, keberadaan gate `site` adalah harus agar modul ini bisa berjalan
 dengan baik.
 

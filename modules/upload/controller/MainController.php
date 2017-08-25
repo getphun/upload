@@ -14,8 +14,19 @@ class MainController extends \Controller
         if($this->req->method != 'POST')
             return $this->show404();
         
-        if(module_exists('user') && !$this->user)
-            return $this->ajax(['error' => 'Not authorized']);
+        $user = null;
+        
+        if(module_exists('user')){
+            if($this->user->isLogin())
+                $user = $this->user;
+            elseif(module_exists('app')){
+                if($this->app->exists && $this->app->user)
+                    $user = $this->app->user;
+            }
+            
+            if(!$user)
+                return $this->show404();
+        }
         
         $u_file = $this->req->getFile('file');
         if(!$u_file)
@@ -76,8 +87,8 @@ class MainController extends \Controller
             'form'      => $u_form
         ];
         
-        if(module_exists('user'))
-            $file['user'] = $this->user->id;
+        if($user)
+            $file['user'] = $user->id;
         
         $f_exts = explode('.', $file['original']);
         $f_ext  = end($f_exts);

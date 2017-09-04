@@ -8,3 +8,4 @@ CREATE TABLE IF NOT EXISTS `media` (
     `user` INTEGER,
     `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+CREATE INDEX `by_mime_name` ON `media` ( `mime`, `name` );

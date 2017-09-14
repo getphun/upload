@@ -93,6 +93,9 @@ class MainController extends \Controller
         $f_exts = explode('.', $file['original']);
         $f_ext  = end($f_exts);
         
+        // remove question mark on the extenstion
+        $f_ext = preg_replace('/\?.+$/', '', $f_ext);
+        
         $file['name'].= '.' . $f_ext;
         
         // create directories

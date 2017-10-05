@@ -18,12 +18,15 @@ return [
         'core',
         '/user/db-mysql'
     ],
-    '_services' => [],
+    '_services' => [
+        'uploader' => 'Upload\\Service\\Uploader'
+    ],
     '_autoload' => [
         'classes' => [
             'Upload\\Controller\\MainController'    => 'modules/upload/controller/MainController.php',
             'Upload\\Model\\Media'                  => 'modules/upload/model/Media.php',
-            'Upload\\Validator\\File'               => 'modules/upload/validator/File.php'
+            'Upload\\Validator\\File'               => 'modules/upload/validator/File.php',
+            'Upload\\Service\\Uploader'             => 'modules/upload/service/Uploader.php'
         ],
         'files' => []
     ],
